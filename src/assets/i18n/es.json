@@ -10,6 +10,7 @@
     "MIN_PRICE_24": "Precio Mínimo en 24h",
     "MAX_PRICE_24": "Precio Máximo en 24h",
     "PRICE_CHANGE_24": "Cambio de Precio en 24h",
+    "RANK": "Ranking",
     "NO_RESULTS": "No se encontraron resultados"
 
 }

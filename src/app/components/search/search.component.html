@@ -1,1 +1,18 @@
-<p>search works!</p>
+
+<div class="input-container">
+    <input type="text" [(ngModel)]="searchText" class="search-input" placeholder="Search..." (input)="search()">
+    <div *ngIf="coins.length > 0" class="search-results">
+        <ul>
+          <li *ngFor="let coin of coins; let i = index" class="coin-item">
+            <span class="coin-index">{{ i + 1 }}.</span>
+            <img [src]="coin.thumb" alt="{{ coin.name }}" width="50" height="50">
+            <div class="coin-details">
+              <span class="coin-name">{{ coin.name }}</span>
+              <span>{{ coin.symbol }}</span>
+              <span class="coin-rank">{{ 'RANK' | translate }}: {{ coin.market_cap_rank }}</span>
+            </div>
+          </li>
+        </ul>
+    </div>      
+</div>
+  

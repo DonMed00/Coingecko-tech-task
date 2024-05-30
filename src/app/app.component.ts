@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BottomNavbarComponent } from './components/bottom-navbar/bottom-navbar.component';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,7 +13,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, BottomNavbarComponent, TranslateModule],
+  imports: [RouterOutlet, TranslateModule],
 })
 export class AppComponent {
   constructor(private languageService: LanguageService) {}

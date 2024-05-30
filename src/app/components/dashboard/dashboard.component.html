@@ -1,6 +1,8 @@
 <div *ngIf="coinsList && coinsList.length > 0" class="coin-container">
-    <h1>{{'COIN_LIST' | translate}}</h1>
-    <div class="coin-list">
+    <h1>{{ 'COIN_LIST' | translate }}</h1>
+    <app-search></app-search>
+
+    <div class="coin-list" *ngIf="showList">
       <div class="coin-item" *ngFor="let coin of coinsList; let i = index">
         <div class="coin-header">
           <div class="coin-details-left">
