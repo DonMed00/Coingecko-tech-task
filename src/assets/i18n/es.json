@@ -1,7 +1,15 @@
 {
-    "APP_TITLE":"HOLA",
+    "APP_TITLE": "Aplicación de Netberry",
     "COMPONENTS": {
-        "DASHBOARD":"Principal",
+        "DASHBOARD": "Tablero",
         "SEARCH": "Buscar"
-    }
+    },
+    "COIN_LIST": "Lista de Monedas",
+    "SYMBOL": "Símbolo",
+    "CURRENT_PRICE": "Precio Actual",
+    "MIN_PRICE_24": "Precio Mínimo en 24h",
+    "MAX_PRICE_24": "Precio Máximo en 24h",
+    "PRICE_CHANGE_24": "Cambio de Precio en 24h",
+    "NO_RESULTS": "No se encontraron resultados"
+
 }

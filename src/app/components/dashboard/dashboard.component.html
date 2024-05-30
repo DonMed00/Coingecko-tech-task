@@ -1,1 +1,41 @@
-<p>dashboard works!</p>
+<div *ngIf="coinsList && coinsList.length > 0" class="coin-container">
+    <h1>{{'COIN_LIST' | translate}}</h1>
+    <div class="coin-list">
+      <div class="coin-item" *ngFor="let coin of coinsList; let i = index">
+        <div class="coin-header">
+          <div class="coin-details-left">
+            <div class="item-number">{{ i + 1 }}</div>
+            <img [src]="coin.image" alt="{{ coin.name }}" class="coin-logo">
+            <h2 class="coin-name">{{ coin.name }}</h2>
+          </div>
+          <div class="coin-details-right">
+            <div class="detail">
+              <p class="label">{{'SYMBOL' | translate}}:</p>
+              <p class="value">{{ coin.symbol }}</p>
+            </div>
+            <div class="detail">
+              <p class="label">{{'CURRENT_PRICE' | translate}}:</p>
+              <p class="value">{{ coin.current_price | currency:'USD':'symbol':'1.2-2' }}</p>
+            </div>
+            <div class="detail">
+              <p class="label">{{'MIN_PRICE_24' | translate}}:</p>
+              <p class="value">{{ coin.low_24h | currency:'USD':'symbol':'1.2-2' }}</p>
+            </div>
+            <div class="detail">
+              <p class="label">{{'MAX_PRICE_24' | translate}}:</p>
+              <p class="value">{{ coin.high_24h | currency:'USD':'symbol':'1.2-2' }}</p>
+            </div>
+            <div class="detail">
+              <p class="label">{{'PRICE_CHANGE_24' | translate}}:</p>
+              <p class="value" [class]="getColor(coin.price_change_percentage_24h)">{{ coin.price_change_percentage_24h.toFixed(2) }}%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!coinsList || coinsList.length === 0">
+    <p>{{'NO_RESULTS' | translate}}</p>
+  </div>
+  

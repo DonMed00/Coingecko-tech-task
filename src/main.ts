@@ -23,7 +23,6 @@ const appConfigWithTranslate = {
   ],
 };
 
-// Inicia la aplicación con la configuración combinada
 bootstrapApplication(AppComponent, appConfigWithTranslate).catch((err) =>
   console.error(err)
 );

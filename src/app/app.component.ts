@@ -4,7 +4,7 @@ import { BottomNavbarComponent } from './components/bottom-navbar/bottom-navbar.
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageService } from './core/services/language.service';
+import { LanguageService } from './core/services/language/language.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);

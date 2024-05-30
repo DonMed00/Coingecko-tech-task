@@ -1,7 +1,14 @@
 {
-    "APP_TITLE":"HELLO",
+    "APP_TITLE":"Netberry Tech App",
     "COMPONENTS": {
         "DASHBOARD":"Dashboard",
         "SEARCH": "Search"
-    }
+    },
+    "COIN_LIST": "Coin List",
+    "SYMBOL": "Symbol",
+    "CURRENT_PRICE": "Coin List",
+    "MIN_PRICE_24": "Min price in 24h",
+    "MAX_PRICE_24": "Max price in 24h",
+    "PRICE_CHANGE_24": "Price change 24h",
+    "NO_RESULTS": "No results"
 }
