@@ -17,8 +17,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 })
 export class AppComponent {
   constructor(private languageService: LanguageService) {}
+  private currentTheme: string = 'light';
 
   ngOnInit() {
     this.languageService.initializeLanguage();
+  }
+
+  toggleTheme(): void {
+    this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
+    document.body.className = this.currentTheme + '-theme';
   }
 }

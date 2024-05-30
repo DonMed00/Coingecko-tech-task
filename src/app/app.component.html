@@ -1,2 +1,9 @@
-<h1>{{ 'APP_TITLE' | translate }}</h1>
-<router-outlet></router-outlet>
+<div class="container">
+    <h1>{{ 'APP_TITLE' | translate }}</h1>
+    <label class="switch">
+      <input type="checkbox" (change)="toggleTheme()">
+      <span class="slider round"></span>  
+    </label>
+  </div>
+  <router-outlet></router-outlet>
+  
