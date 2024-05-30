@@ -1,0 +1,7 @@
+{
+    "APP_TITLE":"HOLA",
+    "COMPONENTS": {
+        "DASHBOARD":"Principal",
+        "SEARCH": "Buscar"
+    }
+}

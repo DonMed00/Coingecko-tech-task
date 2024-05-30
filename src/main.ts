@@ -1,6 +1,29 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { AppComponent, HttpLoaderFactory } from './app/app.component';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { importProvidersFrom } from '@angular/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+const appConfigWithTranslate = {
+  ...appConfig,
+  providers: [
+    ...appConfig.providers,
+    provideHttpClient(),
+    importProvidersFrom(
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient],
+        },
+        defaultLanguage: 'es',
+      })
+    ),
+  ],
+};
+
+// Inicia la aplicación con la configuración combinada
+bootstrapApplication(AppComponent, appConfigWithTranslate).catch((err) =>
+  console.error(err)
+);
