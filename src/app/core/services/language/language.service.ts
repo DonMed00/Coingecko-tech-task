@@ -7,9 +7,13 @@ import { TranslateService } from '@ngx-translate/core';
 export class LanguageService {
   constructor(private translate: TranslateService) {}
 
-  initializeLanguage() {
+  initializeLanguage(): void {
     const browserLang = this.translate.getBrowserLang() || 'es';
     this.translate.setDefaultLang(browserLang);
     this.translate.use(browserLang);
+  }
+
+  getCurrentLanguage(): string {
+    return this.translate.currentLang;
   }
 }

@@ -1,8 +1,8 @@
 {
-    "APP_TITLE": "Tarea APP de Netberry",
+    "APP_TITLE": "App Coingecko",
     "COMPONENTS": {
-        "DASHBOARD": "Tablero",
-        "SEARCH": "Buscar"
+      "DASHBOARD": "Tablero",
+      "SEARCH": "Buscar"
     },
     "COIN_LIST": "Lista de Monedas",
     "SYMBOL": "Símbolo",
@@ -11,6 +11,12 @@
     "MAX_PRICE_24": "Precio Máximo en 24h",
     "PRICE_CHANGE_24": "Cambio de Precio en 24h",
     "RANK": "Ranking",
-    "NO_RESULTS": "No se encontraron resultados"
-
-}
+    "NO_RESULTS": "No se encontraron resultados",
+    "COIN_DETAILS": {
+      "MARKET_CAP": "Capitalización de Mercado",
+      "TWENTY_FOUR_HOUR_VOLUME": "Volumen en 24h",
+      "ALL_TIME_HIGH": "Máximo Histórico",
+      "ALL_TIME_LOW": "Mínimo Histórico"
+    }
+  }
+  

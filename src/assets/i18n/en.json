@@ -1,15 +1,22 @@
 {
-    "APP_TITLE":"Netberry Task",
+    "APP_TITLE": "App Coingecko",
     "COMPONENTS": {
-        "DASHBOARD":"Dashboard",
-        "SEARCH": "Search"
+      "DASHBOARD": "Dashboard",
+      "SEARCH": "Search"
     },
     "COIN_LIST": "Coin List",
     "SYMBOL": "Symbol",
-    "CURRENT_PRICE": "Coin List",
-    "MIN_PRICE_24": "Min price in 24h",
-    "MAX_PRICE_24": "Max price in 24h",
-    "PRICE_CHANGE_24": "Price change 24h",
+    "CURRENT_PRICE": "Current Price",
+    "MIN_PRICE_24": "Min Price in 24h",
+    "MAX_PRICE_24": "Max Price in 24h",
+    "PRICE_CHANGE_24": "Price Change in 24h",
     "RANK": "Ranking",
-    "NO_RESULTS": "No results"
-}
+    "NO_RESULTS": "No Results",
+    "COIN_DETAILS": {
+      "MARKET_CAP": "Market Cap",
+      "TWENTY_FOUR_HOUR_VOLUME": "24h Volume",
+      "ALL_TIME_HIGH": "All-Time High",
+      "ALL_TIME_LOW": "All-Time Low"
+    }
+  }
+  

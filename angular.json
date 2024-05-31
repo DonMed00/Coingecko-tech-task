@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "netberry-tech-task": {
+    "coingecko-tech-task": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/netberry-tech-task",
+            "outputPath": "dist/coingecko-tech-task",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "netberry-tech-task:build:production"
+              "buildTarget": "coingecko-tech-task:build:production"
             },
             "development": {
-              "buildTarget": "netberry-tech-task:build:development"
+              "buildTarget": "coingecko-tech-task:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "netberry-tech-task:build"
+            "buildTarget": "coingecko-tech-task:build"
           }
         },
         "test": {

@@ -3,7 +3,7 @@
     <app-search></app-search>
 
     <div class="coin-list" *ngIf="showList">
-      <div class="coin-item" *ngFor="let coin of coinsList; let i = index">
+      <div class="coin-item" *ngFor="let coin of coinsList; let i = index" [routerLink]="['/details', coin.id]">
         <div class="coin-header">
           <div class="coin-details-left">
             <div class="item-number">{{ i + 1 }}</div>
@@ -37,7 +37,7 @@
     </div>
   </div>
   
-  <div *ngIf="!coinsList || coinsList.length === 0">
+  <div *ngIf="!coinsList || coinsList.length === 0" class="no-results">
     <p>{{'NO_RESULTS' | translate}}</p>
-  </div>
+</div>
   

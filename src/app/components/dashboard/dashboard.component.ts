@@ -4,18 +4,20 @@ import { CoinData } from '../../../models/CoinData';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchComponent } from '../search/search.component';
-import { map } from 'rxjs';
+import { Subscription, map } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, TranslateModule, SearchComponent],
+  imports: [CommonModule, TranslateModule, SearchComponent, RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
   coinsList: CoinData[] = [];
   showList = true;
+  private dashboardSubscription: Subscription | undefined;
 
   constructor(private coinGeckoService: CoinGeckoService) {}
 
@@ -29,12 +31,20 @@ export class DashboardComponent {
   }
 
   getCoinList(): void {
-    this.coinGeckoService.coins$.subscribe((coins) => {
-      this.coinsList = coins;
-    });
+    this.dashboardSubscription = this.coinGeckoService
+      .getCoinsList()
+      .subscribe((coins) => {
+        this.coinsList = coins;
+      });
   }
 
   getColor(change: number): string {
     return change >= 0 ? 'positive' : 'negative';
+  }
+
+  ngOnDestroy(): void {
+    if (this.dashboardSubscription) {
+      this.dashboardSubscription.unsubscribe();
+    }
   }
 }

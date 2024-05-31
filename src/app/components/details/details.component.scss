@@ -1,0 +1,53 @@
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  .back-button fa-icon {
+    color: #007bff;
+  }
+  
+.coin-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.back-button:focus {
+  outline: none;
+}
+
+.coin-info {
+  display: flex;
+}
+
+.coin-logo {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.symbol {
+  margin-left: auto;
+}
+
+.stats {
+  flex-grow: 1;
+}
+
+.coin-description {
+  margin-top: 20px;
+  line-height: 1.5;
+}
