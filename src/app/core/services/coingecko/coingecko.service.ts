@@ -14,7 +14,6 @@ import { CoinDetails } from '../../../../models/CoinDetails';
 })
 export class CoinGeckoService {
   private apiUrl = 'https://api.coingecko.com/api/v3';
-  private apiKey = 'CG-nRS2Y2VzTcBRBbkVPbd4Er8q';
 
   private coinsSearchSubject: BehaviorSubject<CoinDataSearch[]> =
     new BehaviorSubject<CoinDataSearch[]>([]);
@@ -26,7 +25,7 @@ export class CoinGeckoService {
   private getDefaultHeaders(): HttpHeaders {
     return new HttpHeaders({
       Accept: 'application/json',
-      'x-cg-demo-api-key': this.apiKey,
+      //'x-cg-demo-api-key': this.apiKey,
     });
   }
 
