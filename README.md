@@ -1,9 +1,11 @@
 # CoingeckoTechTask
 
 La app accede a la api de coingecko https://docs.coingecko.com/v3.0.1/reference/introduction
+
 La app consta de dos pantallas principales: Dashboard y Search:
  - Dashboard: Carga una lista con las monedas principales con su info principal.
  - Search: Muestra un buscador donde hay que escribir un prompt que hará una llamada a la api haciendo búsqueda con las monedas que coincidan con lo introducido.
+   
 En ambas paginas, se puede clicar en cada moneda y ver otra pantalla con datos ampliados.
 
 También, tenemos en la barra principal de navegación: dos tabs para elegir la navegación y un switch para decidir el tema de la app('claro' u 'oscuro').
