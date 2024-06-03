@@ -1,12 +1,6 @@
 <div class="container">
   <h1>{{ 'APP_TITLE' | translate }}</h1>
-  <div class="theme-switch-container">
-    <span class="theme-switch-label">{{ themeLabel }}</span>
-    <label class="switch">
-      <input type="checkbox" (change)="toggleTheme()">
-      <span class="slider round"></span>  
-    </label>
-  </div>
- <navbar></navbar>
+  <theme-toggle></theme-toggle>
+  <navbar></navbar>
 </div>
 <router-outlet></router-outlet>

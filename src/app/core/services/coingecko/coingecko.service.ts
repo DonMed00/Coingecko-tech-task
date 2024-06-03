@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { CoinData, SearchData } from '../../../../models/CoinData';
 import { CoinDetails } from '../../../../models/CoinDetails';
@@ -38,7 +38,7 @@ export class CoinGeckoService {
       .get<CoinData[]>(`${this.apiUrl}/coins/markets`, options)
       .pipe(
         catchError((error) => {
-          console.error('Error fetching coins list:', error);
+          this.handleError('getCoinsList', error);
           throw error;
         })
       );
@@ -50,7 +50,7 @@ export class CoinGeckoService {
 
     return this.http.get<SearchData>(`${this.apiUrl}/search`, options).pipe(
       catchError((error) => {
-        console.error('Error searching coins:', error);
+        this.handleError('search', error);
         throw error;
       })
     );
@@ -63,9 +63,14 @@ export class CoinGeckoService {
       .get<CoinDetails>(`${this.apiUrl}/coins/${id}`, options)
       .pipe(
         catchError((error) => {
-          console.error(`Error fetching coin ${id} details:`, error);
+          this.handleError('getCoinById', error);
           throw error;
         })
       );
+  }
+
+  private handleError(methodName: string, error: any): void {
+    console.error(`Error in ${methodName}:`, error);
+    alert('An error has ocurried');
   }
 }

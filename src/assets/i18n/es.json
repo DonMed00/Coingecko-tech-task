@@ -12,6 +12,7 @@
     "PRICE_CHANGE_24": "Cambio de Precio en 24h",
     "RANK": "Ranking",
     "NO_RESULTS": "No se encontraron resultados",
+    "ERROR": "Ha ocurrido un error",
     "COIN_DETAILS": {
       "MARKET_CAP": "Capitalización de Mercado",
       "TWENTY_FOUR_HOUR_VOLUME": "Volumen en 24h",
