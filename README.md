@@ -19,5 +19,5 @@ Cosas a tener en cuenta:
  - Si la app necesitara que cada vez que se cargue un componente se mantengan los datos, se podrían haber usado subjects como observables para asignarlos en el servicio y luego observarlos. Pero en este caso, no es necesario.
  - Si una llamada de api falla, se muestra un alert. En un caso real, se debería crear un servicio que active un modal o componente personalizado para gestionar errores.
  - La app esta componetizada para que cualquier componente se pueda usar o quitar, según convenga.
- - La app también tiene compatibilidad mobile para que se vea bien.
+ - La app también tiene compatibilidad mobile.
 
