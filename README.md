@@ -11,7 +11,8 @@ En ambas paginas, se puede clicar en cada moneda y ver otra pantalla con datos a
 También, tenemos en la barra principal de navegación: dos tabs para elegir la navegación y un switch para decidir el tema de la app('claro' u 'oscuro').
 
 La app usa archivos de traducción para español e inglés, dependiendo del lenguaje del navegador (siendo español por defecto).
-Dentro del servicio, podemos ver las distintas funciones que usa la app. En ellaas, se devuelve un observable para que el componente que lo requiera lo use.
+
+Dentro del servicio, podemos ver las distintas funciones que usa la app. En ellas, se devuelve un observable para que el componente que lo requiera lo use.
 
 Cosas a tener en cuenta:
  - Coingecko ofrece una número limitado de llamadas gratuitas sin api key. También, a través de la api key, se puede hacer hasta 10000 llamadas mensuales.
