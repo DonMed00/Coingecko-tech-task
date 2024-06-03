@@ -4,19 +4,21 @@ import { Observable, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { CoinData, SearchData } from '../../../../models/CoinData';
 import { CoinDetails } from '../../../../models/CoinDetails';
+import { environment } from '../../../../environment/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CoinGeckoService {
-  private apiUrl = 'https://api.coingecko.com/api/v3';
+  private apiUrl = environment.apiURL;
+  private apiKey = environment.apiKey;
 
   constructor(private http: HttpClient) {}
 
   private getDefaultHeaders(): HttpHeaders {
     return new HttpHeaders({
       Accept: 'application/json',
-      // 'x-cg-demo-api-key': this.apiKey,
+      'x-cg-demo-api-key': this.apiKey,
     });
   }
 
