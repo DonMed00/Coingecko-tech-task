@@ -21,12 +21,10 @@ export class SearchComponent {
 
   constructor(private coingeckoService: CoinGeckoService) {}
 
-  ngOnInit(): void {
-    this.searchSubscription = this.coingeckoService.coinsSearch$.subscribe(
-      (dataSearch) => {
-        this.coins = dataSearch;
-      }
-    );
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.unsubscribe();
   }
 
   async search(): Promise<void> {
@@ -34,15 +32,16 @@ export class SearchComponent {
       this.coins = [];
       return;
     }
+    this.unsubscribe();
 
-    try {
-      await this.coingeckoService.search(this.searchText);
-    } catch (error) {
-      console.error('Error searching coins:', error);
-    }
+    this.searchSubscription = this.coingeckoService
+      .search(this.searchText)
+      .subscribe((search) => {
+        this.coins = search.coins;
+      });
   }
 
-  ngOnDestroy(): void {
+  private unsubscribe(): void {
     if (this.searchSubscription) {
       this.searchSubscription.unsubscribe();
     }

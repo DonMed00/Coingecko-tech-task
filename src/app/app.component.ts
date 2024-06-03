@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from './core/services/language/language.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -13,7 +14,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, TranslateModule],
+  imports: [RouterOutlet, TranslateModule, NavbarComponent],
 })
 export class AppComponent {
   constructor(private languageService: LanguageService) {}

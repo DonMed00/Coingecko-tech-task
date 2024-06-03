@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import {
-  CoinData,
-  CoinDataSearch,
-  SearchData,
-} from '../../../../models/CoinData';
+import { CoinData, SearchData } from '../../../../models/CoinData';
 import { CoinDetails } from '../../../../models/CoinDetails';
 
 @Injectable({
@@ -14,11 +10,6 @@ import { CoinDetails } from '../../../../models/CoinDetails';
 })
 export class CoinGeckoService {
   private apiUrl = 'https://api.coingecko.com/api/v3';
-
-  private coinsSearchSubject: BehaviorSubject<CoinDataSearch[]> =
-    new BehaviorSubject<CoinDataSearch[]>([]);
-  coinsSearch$: Observable<CoinDataSearch[]> =
-    this.coinsSearchSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -53,19 +44,16 @@ export class CoinGeckoService {
       );
   }
 
-  search(query: string): void {
+  search(query: string) {
     const params = new HttpParams().set('query', query);
     const options = this.getDefaultOptions(params);
 
-    this.http
-      .get<SearchData>(`${this.apiUrl}/search`, options)
-      .pipe(
-        catchError((error) => {
-          console.error('Error searching coins:', error);
-          throw error;
-        })
-      )
-      .subscribe((data) => this.coinsSearchSubject.next(data.coins));
+    return this.http.get<SearchData>(`${this.apiUrl}/search`, options).pipe(
+      catchError((error) => {
+        console.error('Error searching coins:', error);
+        throw error;
+      })
+    );
   }
 
   getCoinById(id: string): Observable<CoinDetails> {

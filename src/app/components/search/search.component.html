@@ -15,4 +15,7 @@
         </ul>
     </div>      
 </div>
+<div *ngIf="!searchText" class="no-results">
+  <p>{{'NO_RESULTS' | translate}}</p>
+</div>
   

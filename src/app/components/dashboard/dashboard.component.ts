@@ -16,20 +16,15 @@ import { RouterModule } from '@angular/router';
 })
 export class DashboardComponent {
   coinsList: CoinData[] = [];
-  showList = true;
   private dashboardSubscription: Subscription | undefined;
 
   constructor(private coinGeckoService: CoinGeckoService) {}
 
   ngOnInit(): void {
     this.getCoinList();
-    this.coinGeckoService.coinsSearch$
-      .pipe(map((data) => data.length > 0))
-      .subscribe((showList) => {
-        this.showList = !showList;
-      });
   }
   getCoinList(): void {
+    this.unsubscribe();
     this.dashboardSubscription = this.coinGeckoService
       .getCoinsList()
       .subscribe((coins) => {
@@ -42,6 +37,10 @@ export class DashboardComponent {
   }
 
   ngOnDestroy(): void {
+    this.unsubscribe();
+  }
+
+  private unsubscribe(): void {
     if (this.dashboardSubscription) {
       this.dashboardSubscription.unsubscribe();
     }

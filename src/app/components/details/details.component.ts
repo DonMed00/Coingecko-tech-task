@@ -38,6 +38,7 @@ export class DetailsComponent {
     this.getCoinDetails();
   }
   getCoinDetails() {
+    this.unsubscribe();
     this.coinDetailsSubscription = this.coinGeckoService
       .getCoinById(this.coinId)
       .subscribe((details) => {
@@ -51,6 +52,10 @@ export class DetailsComponent {
   }
 
   ngOnDestroy(): void {
+    this.unsubscribe();
+  }
+
+  private unsubscribe(): void {
     if (this.coinDetailsSubscription) {
       this.coinDetailsSubscription.unsubscribe();
     }

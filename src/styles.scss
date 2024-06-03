@@ -16,3 +16,16 @@
     padding: 20px;
     background-color: #d1f6cb; 
   }
+
+  .no-results {
+    font-size: 1.5em; 
+    color: #888; 
+    margin-top: 20px;
+    text-align: center; 
+    margin: auto; 
+    position: absolute; 
+    top: 50%; 
+    left: 0;
+    right: 0;
+    transform: translateY(-50%); 
+  }
