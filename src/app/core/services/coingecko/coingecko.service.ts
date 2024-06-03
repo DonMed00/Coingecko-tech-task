@@ -25,7 +25,7 @@ export class CoinGeckoService {
   private getDefaultHeaders(): HttpHeaders {
     return new HttpHeaders({
       Accept: 'application/json',
-      //'x-cg-demo-api-key': this.apiKey,
+      // 'x-cg-demo-api-key': this.apiKey,
     });
   }
 

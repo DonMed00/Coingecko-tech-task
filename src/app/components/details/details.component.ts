@@ -23,6 +23,7 @@ export class DetailsComponent {
   faArrowLeft = faArrowLeft;
   currentLanguage: string = 'es';
   private coinDetailsSubscription: Subscription | undefined;
+  isLoading: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,6 +42,7 @@ export class DetailsComponent {
       .getCoinById(this.coinId)
       .subscribe((details) => {
         this.coinDetails = details;
+        this.isLoading = false;
       });
   }
 

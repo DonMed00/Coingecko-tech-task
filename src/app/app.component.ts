@@ -18,13 +18,24 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 export class AppComponent {
   constructor(private languageService: LanguageService) {}
   private currentTheme: string = 'light';
+  themeLabel: string = 'THEME_LABEL_LIGHT';
 
   ngOnInit() {
     this.languageService.initializeLanguage();
+    this.updateThemeLabel();
   }
 
   toggleTheme(): void {
     this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
     document.body.className = this.currentTheme + '-theme';
+    this.updateThemeLabel();
+  }
+
+  updateThemeLabel(): void {
+    const key =
+      this.currentTheme === 'dark' ? 'THEME_LABEL_LIGHT' : 'THEME_LABEL_DARK';
+    this.languageService.get(key).subscribe((res: string) => {
+      this.themeLabel = res;
+    });
   }
 }

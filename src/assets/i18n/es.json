@@ -17,6 +17,8 @@
       "TWENTY_FOUR_HOUR_VOLUME": "Volumen en 24h",
       "ALL_TIME_HIGH": "Máximo Histórico",
       "ALL_TIME_LOW": "Mínimo Histórico"
-    }
+    },
+    "THEME_LABEL_LIGHT": "Cambiar a claro",
+    "THEME_LABEL_DARK": "Cambiar a oscuro"
   }
   

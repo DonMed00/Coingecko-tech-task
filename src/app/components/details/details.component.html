@@ -1,23 +1,26 @@
-  <div class="coin-details-container" *ngIf="coinDetails">
-    <div class="header">
-      <button (click)="goBack()" class="back-button">
-        <fa-icon [icon]="faArrowLeft"></fa-icon>
-      </button>
-      <h1>{{ coinDetails.name }}</h1>
-      <p class="symbol">{{ coinDetails.symbol | uppercase }}</p>
-    </div>
-    <div class="coin-info">
-      <img [src]="coinDetails.image.large" alt="{{ coinDetails.name }}" class="coin-logo">
-      <div class="stats">
-        <p><strong>{{'CURRENT_PRICE' | translate}}:</strong> {{ coinDetails.market_data.current_price.usd | currency:'USD' }}</p>
-        <p><strong>{{ 'COIN_DETAILS.MARKET_CAP' | translate }}:</strong> {{ coinDetails.market_data.market_cap.usd | currency:'USD' }}</p>
-        <p><strong>{{ 'COIN_DETAILS.TWENTY_FOUR_HOUR_VOLUME' | translate }}:</strong> {{ coinDetails.market_data.total_volume.usd | currency:'USD' }}</p>
-        <p><strong>{{ 'COIN_DETAILS.ALL_TIME_HIGH' | translate }}:</strong> {{ coinDetails.market_data.ath.usd | currency:'USD' }}</p>
-        <p><strong>{{ 'COIN_DETAILS.ALL_TIME_LOW' | translate }}:</strong> {{ coinDetails.market_data.atl.usd | currency:'USD' }}</p>
-        
-      </div>
-    </div>
-    <div class="coin-description" *ngIf="coinDetails.description.en && currentLanguage=='en'" [innerHTML]="coinDetails.description.en"></div>
-    <div class="coin-description" *ngIf="coinDetails.description.es && currentLanguage=='es'" [innerHTML]="coinDetails.description.es"></div>
+<div *ngIf="isLoading" class="spinner-container">
+  <div class="spinner"></div>
+</div>
+
+<div class="coin-details-container" *ngIf="!isLoading && coinDetails">
+  <div class="header">
+    <button (click)="goBack()" class="back-button">
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+    </button>
+    <h1>{{ coinDetails.name }}</h1>
+    <p class="symbol">{{ coinDetails.symbol | uppercase }}</p>
   </div>
+  <div class="coin-info">
+    <img [src]="coinDetails.image.large" alt="{{ coinDetails.name }}" class="coin-logo">
+    <div class="stats">
+      <p><strong>{{'CURRENT_PRICE' | translate}}:</strong> {{ coinDetails.market_data.current_price.usd | currency:'USD' }}</p>
+      <p><strong>{{ 'COIN_DETAILS.MARKET_CAP' | translate }}:</strong> {{ coinDetails.market_data.market_cap.usd | currency:'USD' }}</p>
+      <p><strong>{{ 'COIN_DETAILS.TWENTY_FOUR_HOUR_VOLUME' | translate }}:</strong> {{ coinDetails.market_data.total_volume.usd | currency:'USD' }}</p>
+      <p><strong>{{ 'COIN_DETAILS.ALL_TIME_HIGH' | translate }}:</strong> {{ coinDetails.market_data.ath.usd | currency:'USD' }}</p>
+      <p><strong>{{ 'COIN_DETAILS.ALL_TIME_LOW' | translate }}:</strong> {{ coinDetails.market_data.atl.usd | currency:'USD' }}</p>
+    </div>
+  </div>
+  <div class="coin-description" *ngIf="coinDetails.description.en && currentLanguage=='en'" [innerHTML]="coinDetails.description.en"></div>
+</div>
+
   

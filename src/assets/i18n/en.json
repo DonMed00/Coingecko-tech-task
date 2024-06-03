@@ -17,6 +17,8 @@
       "TWENTY_FOUR_HOUR_VOLUME": "24h Volume",
       "ALL_TIME_HIGH": "All-Time High",
       "ALL_TIME_LOW": "All-Time Low"
-    }
+    },
+    "THEME_LABEL_LIGHT": "Change to light",
+    "THEME_LABEL_DARK": "Change to dark"
   }
   

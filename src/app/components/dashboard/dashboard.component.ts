@@ -29,7 +29,6 @@ export class DashboardComponent {
         this.showList = !showList;
       });
   }
-
   getCoinList(): void {
     this.dashboardSubscription = this.coinGeckoService
       .getCoinsList()
